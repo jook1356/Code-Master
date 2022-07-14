@@ -6,4 +6,18 @@
 HTML - 하이퍼 텍스트 마크업 랭귀지
 
 
+
+
+
+파이썬에서 JSON 
+
 JSON - 자바 스크립트 오브젝트 노션, 파이썬의 딕셔너리와 구조가 비슷함
+
+url = '링크'
+response = requests.get(url).json()
+
+확실히 있을때
+respone['요소']
+
+확실하지 않을때 오류를 피할 수 있다.
+response.get('요소')
