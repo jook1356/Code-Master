@@ -53,3 +53,5 @@ sorted(리스트)
 import random
 random.sample(특정 리스트, n)
 
+
+
