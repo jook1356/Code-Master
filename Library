@@ -53,5 +53,8 @@ sorted(리스트)
 import random
 random.sample(특정 리스트, n)
 
+프린트에 f를 사용가능하듯이 변수에도 f를 사용할 수 있다.
+변수 = f'내용 {변수등등...}'
+
 
 
