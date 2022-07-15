@@ -19,7 +19,7 @@ url = '링크'
 response = requests.get(url).json()
 
 확실히 있을때
-respone['요소']
+response['요소']
 
 확실하지 않을때 오류를 피할 수 있다.
 response.get('요소')
