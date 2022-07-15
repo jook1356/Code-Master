@@ -1,2 +1,2 @@
-# Python
-Library of Python
+# Code-Master
+파이썬 라이브러리와 SSAFY에서 배운 내용들을 데일리 단위로 업로드 하는 공간입니다.
