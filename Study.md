@@ -94,9 +94,10 @@ README.md 라는 마크다운 파일에 오픈 소스의 공식 문서 작성
 
 1. 순서가 있는 목록
 2. 2번 목록
+2. - 하위
+
 
 ```code block```
-```py print('hello')```
 `inline code block`
 
 
