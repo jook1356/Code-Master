@@ -102,8 +102,8 @@ README.md 라는 마크다운 파일에 오픈 소스의 공식 문서 작성
 ```python```
 
 - 링크 (link)
-    [string](url)
-    ex - [구글](https://www.google.com/)
+    - [string](url)
+    - ex - [구글](https://www.google.com/)
     
 
 
