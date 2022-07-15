@@ -96,7 +96,7 @@ README.md 라는 마크다운 파일에 오픈 소스의 공식 문서 작성
 2. 2번 목록
 
 ```code block```
-```py
+```py print('hello')```
 `inline code block`
 
 
