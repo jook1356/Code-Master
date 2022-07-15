@@ -105,6 +105,9 @@ README.md 라는 마크다운 파일에 오픈 소스의 공식 문서 작성
     - [string](url)
     - ex - [구글](https://www.google.com/)
     
+- 사진
+    - ![string](img_url)
+    - ex - ![사진](https://cdn.pixabay.com/photo/2022/06/25/23/41/ladybug-7284337_1280.jpg)
 
 
 --------------------------------------------------------------------------
