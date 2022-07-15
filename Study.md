@@ -84,9 +84,11 @@ README.md 라는 마크다운 파일에 오픈 소스의 공식 문서 작성
 3. commit은 아래 세가지 영역을 바탕으로 동작
     - working Directory (내가 작업하고 있눈 실제 디렉토리), Staging Area(Commit으로 남기고 싶은, 특정 버전으로 관리하고 싶은 파일이 있는 곳), Repository(Commit들이 저장되는 곳)
     - Working Directory -> Staging Area  로 보내는 명령어 (modified -> staged) : git add
-    - Staging Area -> Repository 로 보내는 명령어 (staged -> committed) : git commit
+    - 내가 누구인지 정의(처음 한번만 하면 됨) -> git config --global user.email "이메일", git config --global user.name "이름"
+    - Staging Area -> Repository 로 보내는 명령어 (staged -> committed) : git commit -m "커밋 메세지"
     - 새 버전이 있을 때마다 이 과정을 거친다.
-4. git status 로 현재 관리되고 있는 파일들의 상태를 알 수 있다.
+- git status 로 현재 관리되고 있는 파일들의 상태를 알 수 있다.
+- git config --list 로 현재 설정값을 알 수 있다.
 
 
 
