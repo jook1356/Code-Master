@@ -92,8 +92,14 @@ README.md 라는 마크다운 파일에 오픈 소스의 공식 문서 작성
 
 
 - 깃과 깃허브 연동
-- 
-https://ebbnflow.tistory.com/198
+    - https://ebbnflow.tistory.com/198
+
+
+- 깃허브로부터 로컬로 다운받는 법
+    - git clone 깃허브에서 복사한 주소
+
+- 깃허브에 올리는 법
+    - git push origin master
 
 
 ----------------------------------------------
