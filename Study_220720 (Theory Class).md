@@ -37,9 +37,10 @@
 
 - 조건문 속에 다시 조건문을 넣어서 쓸 수 있음.
 
-#### While문
+#### while문
 
-- While 문에 들어가는 것을 '초기식', 초기식에 대응되는 식이 '증감식' 이다.
+- while 문에 들어가는 것을 '초기식', 초기식에 대응되는 식이 '증감식' 이다.
+- while True: 를 이용해 **적어도** 한번은 실행하게끔 할 수 있다.
 
 #### 복합 연산자
 
@@ -75,7 +76,15 @@
 
   - 딕셔너리.get(키) 로 키값이 없으면 None을 반환해주는 명령어 사용 가능
 
-  
+- dict() 사용 예시 : dict(한국어='안녕', 영어='hi')
+
+  - 키에는 따옴표를 붙이지 않는다.
+
+- 키가 숫자인 딕셔너리를 만들고자 할때 : dict(1=1, 2=2) 는 신택스 에러가 난다.
+
+  - print(dict([(1, 1), (2, 2)]))
+    print(dict(((1,1), (2,2))))
+
 
 ## Dictionary Comprehension
 
@@ -138,6 +147,10 @@ cubic_list =
   
   - 인덱스와 객체를 쌍으로 담은 열거형(enumerate) 객체 반환
     
+    - enumerate(변수, start=숫자)
+    
+      - start에 대입된 수 부터 카운트
+    
     - (index, value) 형태의 tuple로 구성된 열거 객체를 반환
     
     - ```python
@@ -164,7 +177,8 @@ cubic_list =
 - pass
   - 아무 일 없음. 문법상 틀리지 않게 빈공간 채워넣는 명령어
 - else
-  - 반복문의 조건이 더이상 맞지 않아서 반복문이 끝날때 사용 가능
+  - 반복문의 조건이 더이상 맞지 않아서 반복문이 끝날때 사용 가능 (파이썬만 되는 기능)
+  - else를 쓰면 그 반대 급부에는 break와 같은 제어문을 꼭 사용할 것!
 - return
   - break와 같이 반복문이 종료되며, 결과물을 반환
 
@@ -222,6 +236,17 @@ cubic_list =
     - 이를 해결하기 위해 tuple을 사용한다. (ex : return x - y, x* y)
     - 혹은 리스트와 같은 컨테이너 활용
 
+#### 스택
+
+- 함수의 결과값은 스택에 쌓인다.
+- 스택이라는 단어의 의미과 같다고 보면 된다.
+- 리턴 되면 스택에서 함수는 제거된다.
+  - 스택이 비워져야 프로그램이 종료된다.
+
+
+
+--------------
+
 ---------
 
 #### REPL(Read-Eval-Print Loop)
@@ -229,25 +254,25 @@ cubic_list =
 - 주피터 노트북과 같은 환경을 REPL이라고 함
 - REPL 환경에서는 프린트, 리턴 함수를 쓰지 않아도 결과를 보여주기 때문에 혼동을 주의할 것
 
----------
+-----
 
----------------------------
+----
 
 
 
-## 함수의 입력
+# 함수의 입력
 
 ## Parameter와 Argument
 
 
 
-#### Parameter
+#### Parameter (매개 변수)
 
-- 함수를 정의할 때, 선언할 때, 함수 내부에서 사용되는 변수
+- 함수를 정의할 때, 선언할 때, 함수 내부에서 사용되는 매개 변수 (함수 정의하는 부분에서 확인 가능)
 
 
 
-#### Argument
+#### Argument (전달 인자)
 
 - 함수를 호출 할 때, 넣어주는 값
 
@@ -260,7 +285,7 @@ cubic_list =
   - 필수 Argument : 반드시 전달되어야 하는 argument - 없으면 에러
   - 선택 Argument : 값을 전달하지 않아도 되는 경우는 기본값이 전달
 
-- Positional Arguments
+- Positional Arguments (위치 인자)
 
   - 기본적으로 함수 호출 시 Argument는 위치에 따라 함수 내에 전달됨
     - Argument가 (1, 2)이면 Parameter (x, y)에 순서대로 대입되어 (x = 1, y = 2)가 된다.
@@ -277,6 +302,7 @@ cubic_list =
 
     - Parameter에서 def add(x, **y = 0**)의 y = 0처럼 미리 지정해두면 기본값이 되어 Argument에서 지정하지 않아도 됨
     - 정의된 것 보다 더 적은 개수의 Argument로 호출 가능
+- 리스트와 같은 여러 인수를 가지는 변수를 Argument에 넣으면 직접 대입이 되는 것이 아니라 원본 데이터의 주소값을 참조하게 됨
 
 
 
@@ -297,6 +323,7 @@ cubic_list =
 - 패킹 / 언패킹
   - 패킹 : 여러 개의 데이터를 묶어서 변수에 할당하는 것.
     - 리스트를 한 변수에 넣는 것이 예
+    - *args가 함수 안에 있으면 패킹, 바깥에 있으면 언패킹
   - 언패킹 : 시퀸스 속의 요소들을 여러 개의 변수에 나누어 할당하는 것
     - 쉽게 말해 리스트 변수의 인덱스 하나하나를 여러 변수로 분할 대입
     - 언패킹시 변수의 개수와 할당하고자 하는 요소의 갯수가 동일해야 함
@@ -323,6 +350,8 @@ cubic_list =
 -  if pets: 에서 pets에 내용물이 없으면 0으로 되기 때문에 if false:가 되어서 조건문 실행을 하지 않게 되는 원리이다.
 
 
+
+--------------------
 
 --------------------
 
@@ -368,8 +397,9 @@ cubic_list =
   - local scope
 
     - 함수가 호출될 때 생성되고, 함수가 종료될 때까지 유지
+    - 함수 내에서 글로벌 변수와 같은 이름으로 선언해도 별개로 취급
     - <img src="C:\Users\Dongju\AppData\Roaming\Typora\typora-user-images\image-20220720144126980.png" alt="image-20220720144126980" style="zoom:25%;" />
-
+    
     
 
 #### 이름 검색 규칙(Name Resolution)
@@ -426,6 +456,8 @@ cubic_list =
 
 ------------
 
+
+
 # 함수 응용 (내장 함수)
 
 
@@ -434,13 +466,22 @@ cubic_list =
 
 - map(function,iterable)
 - 순회 가능한 데이터구조(iterable)의 모든 요소에 함수(function) 적용하고, 그 결과를 map object로 반환
+- 익히 아는대로 문자열 여러개를 즉각적으로 int로 바꿔가며 리스트에 추가 가능
+- 리스트를 다시 str로 연결시켜 문자열로도 표현 가능하게도 할 수 있음
 - <img src="C:\Users\Dongju\AppData\Roaming\Typora\typora-user-images\image-20220720151550178.png" alt="image-20220720151550178" style="zoom:25%;" />
 
 <img src="C:\Users\Dongju\AppData\Roaming\Typora\typora-user-images\image-20220720151713265.png" alt="image-20220720151713265" style="zoom:25%;" />
 
 
 
+#### join
+
+- 리스트를 특정 형식과 함께 str로 만들어주는 함수?
+- ''.join(리스트) -> 인수 사이사이에 '' 즉 아무것도 없이 모두 연결시켜준다. ([1, 2, 3] -> 123)
+
 #### filter
+
+- 함수와 리스트 등의 변수를 결합하여 결과 도출?
 
 ![image-20220720151800243](C:\Users\Dongju\AppData\Roaming\Typora\typora-user-images\image-20220720151800243.png)
 
@@ -474,6 +515,8 @@ cubic_list =
   - 알고리즘 중 재귀 함수로 로직을 표현하기 쉬운 경우가 있음(예 - 점화식)
   - 변수의 사용이 줄어들며, 코드의 가독성이 높아짐
 - 1개 이상의 base case(종료되는 상황)가 존재하고, 수렴하도록 작성
+- 기본 파트 : 멈추는 부분
+- 유도 파트 : 재귀 호출
 - 예시
   - Factorial
     - <img src="C:\Users\Dongju\AppData\Roaming\Typora\typora-user-images\image-20220720153655246.png" alt="image-20220720153655246" style="zoom:25%;" />
@@ -485,12 +528,15 @@ cubic_list =
   - 파이썬에서는 최대 재구 깊이(maximum recursion depth)가 1000번으로, 호출 횟수가 이를 넘어가게 되면 Recursion error 발생
 - 이론적으로는 **재귀 <-> 반복문 으로 서로 변환이 가능**하다!
 - 반복문을 재귀 함수로 짜보는 것 연습
+- 미리 만들어져 있는 재귀함수를 많이 접해봐야 함
 
 
 
 -------
 
 -----------
+
+
 
 # 모듈
 
@@ -515,6 +561,8 @@ cubic_list =
   - 패키지 안에는 또 다른 서브 패키지를 포함
 
   <img src="C:\Users\Dongju\AppData\Roaming\Typora\typora-user-images\image-20220720154919170.png" alt="image-20220720154919170" style="zoom:25%;" />
+  
+  
 
 
 
@@ -580,6 +628,7 @@ cubic_list =
 #### 패키지 만들기
 
 - 같은 폴더에 __init\_\_.py 가 필요하다
+- `__init__.py`는 '이 파일이 있는 디렉터리를 하나의 파이썬 패키지로 인식해!'라고 파이썬에게 알려주는 역할을 하는 파일
 
 
 
